@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+header {
+    background-color: #fff;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #333; /* Light mode color */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.theme-toggle:hover {
+    color: #FF8C00;
+}
+
+body.dark-mode .theme-toggle {
+    color: #f0f0f0; /* Dark mode color */
+}
+
+body.dark-mode .theme-toggle:hover {
+    color: #FF8C00; /* Same hover color for consistency */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: #FF8C00;
+    font-weight: medium;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: medium;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #FF8C00;
+}
+
+main {
+    padding-top: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 4rem 2rem;
+}
+
+h1,
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    color: #FF8C00;
+}
+
+#home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.intro {
+    position: relative;
+    width: 35%;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.intro h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.intro p {
+    text-align: center;
+}
+
+.line-spacing {
+    display: inline-block; /* Make it an inline block for spacing */
+    margin-bottom: 10px; /* Adjust the value as needed */
+}
+
+
+.profile-image {
+    position: absolute;
+    top: 150px;
+    left: 1000px;
+    width: 400px;
+    height: 550px;
+    background-color: #FF1493;
+    z-index: 1;
+}
+
+.profile-image img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-gap: 1rem; /* Gap between the boxes */
+    margin-top: 2rem;
+}
+
+.skill-box {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* Adjust height as per your design */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skill-box img {
+    max-width: 100%;
+    height: 100%;
+}
+
+.tools {
+    display: flex;
+    gap: 1.5rem; /* Adjust the gap size as needed */
+    overflow: hidden; /* Hide the scrollbar */
+    white-space: nowrap; /* Prevent images from wrapping to the next line */
+    animation: scroll 20s linear infinite; /* Apply endless scroll animation */
+}
+
+.tools img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Keyframes for horizontal scrolling animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#about {
+    margin-top: 5%;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+#about p {
+    margin-bottom: 3%;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+}
+
+/* Center the button */
+.container {
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    background-color: #FF8C00;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+#contact {
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin-left: 1rem;
+    }
+
+    #home {
+        flex-direction: column;
+    }
+
+    .intro,
+    .profile-image {
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.dark-mode header {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode nav ul li a {
+    color: #f0f0f0;
+}
+
+body.dark-mode nav ul li a:hover,
+body.dark-mode nav ul li a.active {
+    color: #FF8C00;
+}
+
+body.dark-mode #about {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .skill-box {
+    background-color: #333;
+    border-color: #555;
+}
+
+body.dark-mode .button {
+    background-color: #FF8C00;
+    color: #fff;
+}
